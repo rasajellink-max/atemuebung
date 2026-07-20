@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; script-src 'none'; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#eaf4fb">
+  <title>Atempause</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="screen prepare" id="prepare" aria-labelledby="prepare-title">
+      <div class="card">
+        <p class="eyebrow">Bevor es losgeht</p>
+        <h1 id="prepare-title">Mach es dir bequem.</h1>
+        <p class="lead">Setze dich angenehm und möglichst aufrecht hin. Stelle beide Füße bequem ab und lockere deine Schultern.</p>
+        <p>Atme zunächst ganz normal. Wenn du soweit bist, beginnt eine Atemübung mit vier ruhigen Runden.</p>
+        <a class="button" href="#exercise">Ich bin bereit</a>
+      </div>
+    </section>
+
+    <section class="screen exercise" id="exercise" aria-labelledby="exercise-title">
+      <div class="exercise-content">
+        <p class="eyebrow">Runde <span class="round-number" aria-hidden="true"></span><span class="sr-only">eins bis vier</span> von 4</p>
+        <h1 id="exercise-title" class="sr-only">Geführte Atemübung</h1>
+        <p class="sr-only">Atme vier Sekunden ein, halte vier Sekunden und atme acht Sekunden aus. Wiederhole das viermal.</p>
+
+        <div class="breath-stage" aria-hidden="true">
+          <div class="guide-ring"></div>
+          <div class="breath-circle">
+            <span class="phase"></span>
+            <span class="seconds"></span>
+          </div>
+        </div>
+
+        <p class="gentle-hint">Ganz ruhig – es gibt nichts zu leisten.</p>
+      </div>
+
+      <div class="completion" aria-live="polite">
+        <p class="eyebrow">Geschafft</p>
+        <h2>Die Übung ist beendet.</h2>
+        <p class="lead">Nimm dir einen Moment Zeit und atme in deinem eigenen Rhythmus weiter.</p>
+        <a class="button" href="./">Noch einmal</a>
+      </div>
+    </section>
+
+    <section class="screen welcome" id="start" aria-labelledby="welcome-title">
+      <div class="card">
+        <div class="calm-mark" aria-hidden="true"><span></span></div>
+        <p class="eyebrow">Eine Minute für dich</p>
+        <h1 id="welcome-title">Möchtest du eine kurze Atemübung machen?</h1>
+        <p class="lead">Vier ruhige Atemzüge können dir helfen, für einen Moment innezuhalten.</p>
+        <a class="button" href="#prepare">Übung starten</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Wenn dir das Atemanhalten unangenehm ist oder dir schwindelig wird, atme normal weiter und beende die Übung.</p>
+  </footer>
+</body>
+</html>
