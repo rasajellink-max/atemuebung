@@ -22,7 +22,8 @@
 }
 
 html {
-  min-width: 20rem;
+  width: 100%;
+  min-width: 0;
   min-height: 100%;
   background: var(--night-950);
   -webkit-text-size-adjust: 100%;
@@ -31,6 +32,8 @@ html {
 }
 
 body {
+  width: 100%;
+  min-width: 0;
   min-height: 100vh;
   min-height: 100svh;
   margin: 0;
@@ -78,6 +81,7 @@ body::after {
   position: relative;
   z-index: 1;
   width: 100%;
+  min-width: 0;
   max-width: 36.25rem;
   margin: auto;
   display: grid;
@@ -87,7 +91,7 @@ body::after {
 .screen {
   display: none;
   width: 100%;
-  min-height: 33rem;
+  min-height: 0;
   min-height: min(40.625rem, calc(100svh - 7.5rem));
   place-items: center;
 }
@@ -117,6 +121,7 @@ body::after {
   box-shadow: var(--shadow);
   text-align: center;
   isolation: isolate;
+  overflow-wrap: anywhere;
 }
 
 .card::before,
@@ -276,7 +281,8 @@ p {
 
 .exercise-content,
 .completion {
-  min-height: 33rem;
+  min-height: 0;
+  min-height: min(33rem, calc(100svh - 7.5rem));
 }
 
 .exercise-content {
@@ -288,8 +294,10 @@ p {
   position: relative;
   width: 17rem;
   width: min(76vw, 22.5rem);
+  width: min(76vw, 38svh, 22.5rem);
   height: 17rem;
   height: min(76vw, 22.5rem);
+  height: min(76vw, 38svh, 22.5rem);
   margin: 1.6rem auto 1.8rem;
   display: grid;
   place-items: center;
@@ -395,6 +403,7 @@ p {
   align-content: center;
   visibility: hidden;
   opacity: 0;
+  overflow-y: auto;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 42%),
     var(--surface-deep);
@@ -505,6 +514,71 @@ footer p {
   .exercise-content,
   .completion {
     padding: 3.2rem 3rem;
+  }
+}
+
+@media (max-width: 22rem) {
+  body {
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+  }
+
+  .card,
+  .exercise-content,
+  .completion {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 8vw, 2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 7vw, 1.9rem);
+  }
+}
+
+@media (max-height: 44rem) {
+  body {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+    padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
+  }
+
+  .card,
+  .exercise-content,
+  .completion {
+    padding-top: 1.35rem;
+    padding-bottom: 1.35rem;
+  }
+
+  .calm-mark {
+    width: 5.25rem;
+    height: 5.25rem;
+    margin-bottom: 1rem;
+  }
+
+  h1,
+  h2 {
+    margin-bottom: 0.85rem;
+  }
+
+  p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .button {
+    margin-top: 0.75rem;
+  }
+
+  .breath-stage {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  footer {
+    margin-top: 0.45rem;
   }
 }
 
